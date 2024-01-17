@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <div className="w-full ">
-      <div className="flex items-center w-4/6 justify-between m-auto mt-8">
+      <div className="flex items-center w-4/5 justify-between m-auto mt-8 p-6">
         <div>
           <p className="text-3xl font-bold">.SS/.</p>
         </div>
