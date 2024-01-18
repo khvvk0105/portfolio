@@ -14,8 +14,8 @@ export const About = () => {
             alt=""
           />
         </div>
-        <div className="w-[584px] flex flex-col gap-3">
-          <h1>Curious about me? Here you have it:</h1>
+        <div className="w-[584px] flex flex-col gap-2">
+          <h1 className="text-3xl">Curious about me? Here you have it:</h1>
           <p>
             I'm a passionate, self-proclaimed designer who specializes in full
             stack development (React.js & Node.js). I am very enthusiastic about
@@ -45,12 +45,12 @@ export const About = () => {
           </p>
           <p>Finally, some quick bits about me.</p>
           <div className="flex gap-10">
-            <p>B.E. in Computer Engineering</p>
-            <p>Avid learner</p>
+            <li>B.E. in Computer Engineering</li>
+            <li>Avid learner</li>
           </div>
-          <div className="flex gap-[110px]">
-            <p>Full time freelancer</p>
-            <p>Aspiring indie hacker</p>
+          <div className="flex gap-[114px]">
+            <li>Full time freelancer</li>
+            <li>Aspiring indie hacker</li>
           </div>
           <p>
             One last thing, I'm available for freelance work, so feel free to
