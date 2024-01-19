@@ -1,8 +1,8 @@
 export const About = () => {
   return (
-    <div className="w-4/5 m-auto mt-20">
+    <div className="w-4/5 m-auto mt-10 bg-stone-200">
       <div className="flex items-center justify-center">
-        <button className=" bg-stone-400 border rounded-lg p-[4px]">
+        <button className=" bg-stone-400 border rounded-lg p-[4px] mt-20">
           About me
         </button>
       </div>

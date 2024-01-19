@@ -59,10 +59,6 @@ export const skillArr2 = [
     text: "MongoDB",
   },
   {
-    icon: <MongoDB />,
-    text: "MongoDB",
-  },
-  {
     icon: <Sass />,
     text: "Sass/Scss",
   },
