@@ -1,9 +1,10 @@
 import { Portfolio } from "./portfolio";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export default function Home() {
   return (
-    <div className="w-1440px">
+    <ThemeProvider className="w-1440px">
       <Portfolio />
-    </div>
+    </ThemeProvider>
   );
 }

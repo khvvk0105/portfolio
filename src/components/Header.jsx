@@ -1,6 +1,23 @@
+import { useTheme } from "@/context/ThemeContext";
+import { ThemeProvider } from "@/context/ThemeContext";
+import { Light } from "./Light";
+import { Dark } from "./Dark";
+
 export const Header = () => {
+  const { theme, setTheme } = useTheme();
+
+  const changeThemeHandler = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  const headerClassName = `w-full ${
+    theme == "light" ? "bg-slate-300 text-black" : "bg-slate-900 text-white"
+  }`;
+  const downloadClassName = `w-136px h-36px rounded-xl px-3 ${
+    theme == "light" ? "bg-slate-900 text-white" : "bg-slate-300 text-black"
+  }`;
+
   return (
-    <div className="w-full ">
+    <div className={headerClassName}>
       <div className="flex items-center w-4/5 justify-between m-auto mt-8 p-6">
         <div>
           <p className="text-3xl font-bold">&#60; SS/ &#62;</p>
@@ -10,78 +27,10 @@ export const Header = () => {
           <p>Work</p>
           <p>Testimonials</p>
           <p>Contact</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M12 2V4"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M12 20V22"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M4.92993 4.92999L6.33993 6.33999"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M17.6599 17.66L19.0699 19.07"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M2 12H4"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M20 12H22"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M6.33993 17.66L4.92993 19.07"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M19.0699 4.92999L17.6599 6.33999"
-              stroke="#4B5563"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <div className="w-136px h-36px bg-slate-950 text-color text-white rounded-xl px-3">
+          <div onClick={changeThemeHandler}>
+            {theme == "light" ? <Light /> : <Dark />}
+          </div>
+          <div className={downloadClassName}>
             <p>Download CV</p>
           </div>
         </div>
