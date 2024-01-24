@@ -9,7 +9,7 @@ import { End } from "@/components/End";
 
 export const Portfolio = () => {
   return (
-    <div className="max-w-[1440px] m-auto p-30">
+    <div className="w-full m-auto p-30">
       <Header />
       <Hero />
       <About />

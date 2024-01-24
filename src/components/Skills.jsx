@@ -1,14 +1,24 @@
 import { skillArr, skillArr2 } from "@/utils/skills";
 import { CardSkill } from "./CardSkill";
 import { CardSkill2 } from "./CardSkill2";
+import { useTheme } from "@/context/ThemeContext";
 export const Skills = () => {
+  const { theme, setTheme } = useTheme();
+
+  const changeThemeHandler = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  const skillClassName = `w-full m-auto p-20 ${
+    theme == "light" ? "dark" : "bg-slate-900 text-white"
+  }`;
+  const slillButClassName = `border rounded-lg p-[4px] ${
+    theme == "light" ? "bg-slate-300 text-black" : "bg-slate-800 text-white"
+  }`;
   return (
-    <div className="w-4/5 m-auto mt-10">
+    <div className={skillClassName}>
       <div>
         <div className="flex items-center justify-center">
-          <button className=" bg-stone-400 border rounded-lg p-[4px] ">
-            Skills
-          </button>
+          <button className={slillButClassName}>Skills</button>
         </div>
         <div className="flex items-center justify-center mt-[16px]">
           <p>The skills, tools and technologies I am really good at:</p>

@@ -1,20 +1,30 @@
+import { useTheme } from "@/context/ThemeContext";
+
 export const About = () => {
+  const { theme, setTheme } = useTheme();
+  const changeThemeHandler = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  const aboutClassName = `w-full m-auto p-20 ${
+    theme == "light" ? "bg-slate-100 text-black" : "bg-slate-700 text-white"
+  }`;
+  const aboutButClassName = `border rounded-lg p-[4px] ${
+    theme == "light" ? "bg-slate-300 text-black" : "bg-slate-800 text-white"
+  }`;
   return (
-    <div className="w-4/5 m-auto ">
+    <div className={aboutClassName}>
       <div className="flex items-center justify-center">
-        <button className=" bg-stone-400 border rounded-lg p-[4px]">
-          About me
-        </button>
+        <button className={aboutButClassName}>About me</button>
       </div>
       <div className="flex justify-between mt-10 h-[694px]">
-        <div className="w-[400px] h-[480px] mt-3">
+        <div className="w-2/6 h-[480px] mt-3 flex items-center justify-center">
           <img
             className="w-4/5"
             src="https://s3-alpha-sig.figma.com/img/8781/bda6/7a25952db5724f48492cd455a6e81952?Expires=1706486400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=iD776LocC9a2IKsEEOaYst01NN5Lo3uvEsPe-g-xHHCoZ3YH2nTx6vngudPrjvMx9V8fPVT4IK3s3nj1Myeef6xBPc9vfd3E4iP1c2fe7QC-nBR2k~YbfdlJNFiyDEEFAXF6TtkbM5EehR2t8RehwXWG5DL-QW2AgEX4WhHCUHTCwg8YVAk0fK5PiQ2zyyV9zL0bfPyOdcr7ihc1WFlz7Tdf-PKy6ukX3mjD0Vo2wuGgontjFSSetothS6hfcwSOXmbzezxEO4NmD29qL1pCYvp2iVoFU~lu0h6JaoLlT3hc0LVsjWRZdSiwGHT0XXpjzdYHAbrDM70dMS1aH~n-hw__"
             alt=""
           />
         </div>
-        <div className="w-[584px] flex flex-col gap-3">
+        <div className="w-3/6 flex flex-col gap-3">
           <h1>Curious about me? Here you have it:</h1>
           <p>
             I'm a passionate, self-proclaimed designer who specializes in full

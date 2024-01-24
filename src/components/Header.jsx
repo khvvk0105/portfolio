@@ -1,5 +1,5 @@
 import { useTheme } from "@/context/ThemeContext";
-import { ThemeProvider } from "@/context/ThemeContext";
+
 import { Light } from "./Light";
 import { Dark } from "./Dark";
 
@@ -10,7 +10,7 @@ export const Header = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
   const headerClassName = `w-full ${
-    theme == "light" ? "bg-slate-300 text-black" : "bg-slate-900 text-white"
+    theme == "light" ? "bg-slate-100 text-black" : "bg-slate-900 text-white"
   }`;
   const downloadClassName = `w-136px h-36px rounded-xl px-3 ${
     theme == "light" ? "bg-slate-900 text-white" : "bg-slate-300 text-black"

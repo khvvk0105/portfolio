@@ -1,6 +1,16 @@
+import { useTheme } from "@/context/ThemeContext";
+
 export const Hero = () => {
+  const { theme, setTheme } = useTheme();
+
+  const changeThemeHandler = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  const heroClassName = `w-full flex justify-between m-auto p-20 ${
+    theme == "light" ? "" : "bg-slate-900 text-white"
+  }`;
   return (
-    <div className="w-4/5 flex justify-between  m-auto mt-20">
+    <div className={heroClassName}>
       <div className="w-3/5 ">
         <div className="flex flex-col gap-2">
           <h1 className="text-6xl">Hi, I’m Sagar 👋</h1>
