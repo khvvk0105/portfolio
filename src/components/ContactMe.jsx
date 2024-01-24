@@ -3,14 +3,25 @@ import { Last } from "./Last";
 import { ContactFirst } from "./ContactFirst";
 import { ContactSecond } from "./ContactSecond";
 import { last1 } from "@/utils/last";
+import { useTheme } from "@/context/ThemeContext";
 
 export const ContactMe = () => {
+  const { theme, setTheme } = useTheme();
+
+  const changeThemeHandler = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  const contactClassName = `flex flex-col items-center justify-center ${
+    theme == "light" ? "dark" : "bg-slate-900 text-white"
+  }`;
+
+  const conButClassName = `border rounded-lg p-[4px] ${
+    theme == "light" ? "bg-slate-300 text-black" : "bg-slate-800 text-white"
+  }`;
   return (
     <div>
-      <div className="flex flex-col items-center justify-center ">
-        <button className=" bg-stone-600 border rounded-lg p-[4px] mt-20 ">
-          Get in touch
-        </button>
+      <div className={contactClassName}>
+        <button className={conButClassName}>Get in touch</button>
         <p className=" mt-10">
           What’s next? Feel free to reach out to me if you're looking for a
           developer, have a query, or simply want to connect.

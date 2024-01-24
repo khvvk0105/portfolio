@@ -1,13 +1,23 @@
 import { row1Arr } from "@/utils/raw1";
 import { Row1 } from "./Row1";
+import { useTheme } from "@/context/ThemeContext";
 
 export const Experience = () => {
+  const { theme, setTheme } = useTheme();
+  const changeThemeHandler = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  const expClassName = `w-full m-auto p-20 ${
+    theme == "light" ? "bg-slate-100 text-black" : "bg-slate-800 text-white"
+  }`;
+
+  const expButClassName = `border rounded-lg p-[4px] ${
+    theme == "light" ? "bg-slate-300 text-black" : "bg-slate-800 text-white"
+  }`;
   return (
-    <div className="w-4/5 m-auto mt-10 bg-stone-200">
+    <div className={expClassName}>
       <div className="flex items-center justify-center ">
-        <button className=" bg-stone-600 border rounded-lg p-[4px] mt-20 ">
-          Experience
-        </button>
+        <button className={expButClassName}>Experience</button>
       </div>
       <div className="flex items-center justify-center mt-10">
         <p>Here is a quick summary of my most recent experiences:</p>
